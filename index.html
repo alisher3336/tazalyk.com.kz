@@ -1040,53 +1040,75 @@
       transform: scale(1.05);
     }
 
-    /* CTA Section - ОБНОВЛЕННАЯ ВЕРСИЯ */
-    #cta {
-      background: linear-gradient(135deg, var(--light-green), #f0fff5);
-    }
+/* CTA Section - ИСПРАВЛЕННАЯ ВЕРСИЯ */
+#cta {
+  background: linear-gradient(135deg, var(--light-green), #f0fff5);
+}
 
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 30px 0;
-    }
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+}
 
-    .cta-btn {
-      padding: 15px 30px;
-      border: none;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.cta-btn {
+  padding: 16px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 100%;
+  max-width: 280px;
+  justify-content: center;
+  box-sizing: border-box;
+}
 
-    .cta-btn.primary {
-      background: linear-gradient(135deg, var(--blue), var(--green));
-      color: white;
-      box-shadow: 0 5px 15px rgba(63, 212, 107, 0.3);
-    }
+/* Стиль для кнопки карты */
+.cta-btn.map-btn {
+  background: white;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  box-shadow: 0 5px 15px rgba(255, 68, 68, 0.2);
+  order: 1;
+}
 
-    .cta-btn.secondary {
-      background: white;
-      color: var(--green);
-      border: 2px solid var(--green);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.cta-btn.map-btn:hover {
+  background: #fff5f5;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 68, 68, 0.3);
+}
 
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(63, 212, 107, 0.4);
-    }
+.cta-btn.primary {
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: white;
+  box-shadow: 0 5px 15px rgba(63, 212, 107, 0.3);
+  order: 2;
+}
 
-    .cta-btn.secondary:hover {
-      background: var(--light-green);
-    }
+.cta-btn.secondary {
+  background: white;
+  color: var(--green);
+  border: 2px solid var(--green);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  order: 3;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(63, 212, 107, 0.4);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--light-green);
+}
 
     /* Раскрывающиеся контакты */
     .phone-expand {
@@ -2016,37 +2038,37 @@
     </div>
   </section>
 
-  <!-- ОБНОВЛЕННАЯ CTA СЕКЦИЯ -->
-  <section id="cta" data-animate>
-    <div class="container">
-      <h2 class="section-title">Готовы к безупречной чистоте в Алматы?</h2>
-      <p class="section-subtitle">Закажите профессиональную уборку прямо сейчас и получите идеальную чистоту в вашем доме или офисе</p>
-      
-      <div class="cta-buttons">
-        <button class="cta-btn primary" onclick="openCalculator()">
-          <i class="fas fa-calculator"></i> Рассчитать стоимость уборки
-        </button>
-        <button class="cta-btn secondary" onclick="openWhatsAppModal()">
-          <i class="fab fa-whatsapp"></i> Заказать уборку в Алматы
-        </button>
-        <a href="https://2gis.kz/astana/geo/70000001104514259" class="cta-btn secondary" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
-          <i class="fas fa-map-marker-alt" style="color: #ff4444;"></i> 
-          Мы находимся здесь
-        </a>
-      </div>
-      
-      <div class="phone-expand">
-        <button class="expand-btn" onclick="toggleNumbers()">
-          Наши контакты в Алматы <span class="arrow">▼</span>
-        </button>
-        <div class="numbers-list" id="numbersList">
-          <a href="tel:+77476113590" class="number-option">+7 747 611 35 90</a>
-          <a href="tel:+77474507959" class="number-option">+7 747 450 79 59</a>
-          <a href="mailto:servicetazalyk@gmail.com" class="number-option">servicetazalyk@gmail.com</a>
-        </div>
+<!-- ОБНОВЛЕННАЯ CTA СЕКЦИЯ БЕЗ ПЕРЕКРЫТИЯ -->
+<section id="cta" data-animate>
+  <div class="container">
+    <h2 class="section-title">Готовы к безупречной чистоте в Алматы?</h2>
+    <p class="section-subtitle">Закажите профессиональную уборку прямо сейчас и получите идеальную чистоту в вашем доме или офисе</p>
+    
+    <div class="cta-buttons">
+      <a href="https://2gis.kz/astana/geo/70000001104514259" class="cta-btn map-btn" target="_blank">
+        <i class="fas fa-map-marker-alt"></i> 
+        Мы находимся здесь
+      </a>
+      <button class="cta-btn primary" onclick="openCalculator()">
+        <i class="fas fa-calculator"></i> Рассчитать стоимость
+      </button>
+      <button class="cta-btn secondary" onclick="openWhatsAppModal()">
+        <i class="fab fa-whatsapp"></i> Заказать уборку
+      </button>
+    </div>
+    
+    <div class="phone-expand">
+      <button class="expand-btn" onclick="toggleNumbers()">
+        Наши контакты в Алматы <span class="arrow">▼</span>
+      </button>
+      <div class="numbers-list" id="numbersList">
+        <a href="tel:+77476113590" class="number-option">+7 747 611 35 90</a>
+        <a href="tel:+77474507959" class="number-option">+7 747 450 79 59</a>
+        <a href="mailto:servicetazalyk@gmail.com" class="number-option">servicetazalyk@gmail.com</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <footer>
     <div class="footer-content">
@@ -2164,7 +2186,11 @@
     isModalOpen = true;
     calculatorModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    setTimeout(() => calculatorContent.classList.add('active'), 10);
+    setTimeout(() => {
+      calculatorContent.classList.add('active');
+      // Автофокус на первое поле
+      document.getElementById('length').focus();
+    }, 10);
   }
 
   function closeCalculator(e) {
@@ -2210,7 +2236,8 @@
     }, 300);
   }
 
-  // === Инициализация обработчиков событий ===
+
+// === Инициализация обработчиков событий ===
 function initializeEventHandlers() {
   // Защита от двойных срабатываний
   let lock = false;
@@ -2218,7 +2245,7 @@ function initializeEventHandlers() {
     if (lock) return;
     lock = true;
     fn(e);
-    setTimeout(() => lock = false, 300);
+    setTimeout(() => lock = false, 500);
   }
 
   // Кнопки закрытия модальных окон
@@ -2229,7 +2256,7 @@ function initializeEventHandlers() {
 
   [closeInstagramBtn, closeWhatsAppBtn, closeCalculatorBtn, closeMenuBtn].forEach(btn => {
     if (btn) {
-      btn.addEventListener('pointerup', (e) => {
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (btn === closeInstagramBtn) safeRun(closeInstagramModal, e);
@@ -2243,17 +2270,17 @@ function initializeEventHandlers() {
   // Гамбургер (открытие меню)
   const hamburgerBtn = document.querySelector('.hamburger-btn');
   if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('pointerup', (e) => {
+    hamburgerBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       safeRun(openMenu, e);
     }, { passive: false });
   }
 
-  // CTA кнопки (Рассчитать / Связаться)
-  const ctaButtons = document.querySelectorAll('.cta-btn');
+  // CTA кнопки (Рассчитать / Связаться) - ИСКЛЮЧАЕМ КНОПКУ КАРТЫ
+  const ctaButtons = document.querySelectorAll('.cta-btn:not(.map-btn)');
   ctaButtons.forEach(btn => {
-    btn.addEventListener('pointerup', (e) => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (btn.classList.contains('primary')) safeRun(openCalculator, e);
@@ -2270,11 +2297,21 @@ function initializeEventHandlers() {
   ];
   modals.forEach(item => {
     if (item.modal) {
-      item.modal.addEventListener('pointerup', (e) => {
+      item.modal.addEventListener('click', (e) => {
         if (e.target === item.modal) safeRun(item.close, e);
       });
     }
   });
+
+  // Кнопка карты - разрешаем стандартное поведение ссылки
+  const mapBtn = document.querySelector('.cta-btn.map-btn');
+  if (mapBtn) {
+    mapBtn.addEventListener('click', (e) => {
+      // НЕ блокируем стандартное поведение - ссылка откроется нормально
+      // Только останавливаем всплытие, чтобы другие обработчики не сработали
+      e.stopPropagation();
+    });
+  }
 }
 
 
@@ -2283,8 +2320,8 @@ function initializeEventHandlers() {
     const length = document.getElementById('length').value;
     const width = document.getElementById('width').value;
     
-    if (!length || !width) {
-      alert('Пожалуйста, заполните длину и ширину комнаты');
+    if (!length || !width || length <= 0 || width <= 0) {
+      alert('Пожалуйста, заполните длину и ширину комнаты корректными значениями');
       return false;
     }
     
